@@ -1,0 +1,372 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.body {
+  background: url(/giuaky/img/phongcanh.png) no-repeat;
+  height: 800px;
+  background-size: cover;
+  background-position: center;
+  min-height: 100px;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  top: 0;
+  background-color: rgba(3, 30, 8, 0.1);
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+.logo {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+}
+.navbar a {
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  margin-left: 40px;
+}
+.icon {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+@media (max-width: 900px) {
+  .icon {
+    display: block;
+  }
+  #check:checked ~ .icon #menu-icon {
+    display: none;
+  }
+  #check:checked ~ .icon #close-icon {
+    display: block;
+  }
+  .icon #close-icon {
+    display: none;
+  }
+
+  .navbar {
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(149, 255, 170, 0.1);
+    backdrop-filter: blur(50px);
+    transition: 1s;
+    overflow: hidden;
+    display: flex;
+  }
+  #check:checked ~ .navbar {
+    height: 150px;
+  }
+}
+.container {
+  text-align: center;
+  display: flex;
+  width: 1000px;
+}
+.cc {
+  width: 100%;
+  padding-top: 20px;
+}
+.bb {
+  justify-content: center;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+.bb a {
+  margin-top: 40px;
+}
+.bb span {
+  width: 250px;
+  position: absolute;
+  margin-top: 70px;
+  visibility: hidden;
+  text-align: justify;
+}
+.bb:hover span {
+  visibility: visible;
+  text-align: center;
+}
+.cc a {
+  font-size: 15px;
+  color: whitesmoke;
+}
+.cc .fa-user {
+  margin-left: 5px;
+  color: whitesmoke;
+}
+.cc .fa-arrow-right-to-bracket {
+  margin-left: 5px;
+  color: whitesmoke;
+}
+main {
+  display: flex;
+  width: 100%;
+}
+.containerleft {
+  width: 20%;
+  background-color: #8b4513;
+}
+.left {
+  padding: 20px;
+}
+.containerright {
+  width: 100%;
+  background: url(/giuaky/img/dangnhap.png);
+}
+.right {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.book {
+  transition: 1s;
+  text-align: center;
+  padding: 25px;
+  margin: 20px;
+}
+@media (min-width: 600px) {
+  .right {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .right {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.book:hover {
+  background-color: #faebd7;
+  transform: scale(1.2);
+  border-radius: 10px;
+}
+.book:hover h3 {
+  color: black;
+}
+.book p {
+  color: whitesmoke;
+}
+.book:hover p {
+  color: black;
+}
+img {
+  width: 250px;
+  height: 350px;
+}
+.aa {
+  position: relative;
+  transition: 1s;
+  width: 100%;
+  height: 180px;
+}
+.aa span {
+  width: 100%;
+  position: absolute;
+  left: 20px;
+  visibility: hidden;
+  top: 15px;
+  right: 0px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.aa:hover span {
+  visibility: visible;
+}
+.aa span ul li a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: auto;
+}
+.aa span ul li a:hover {
+  color: gray;
+  padding: 10px;
+}
+.aa span ul li {
+  list-style: none;
+}
+
+.aa a {
+  font-size: 20px;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.book .bxs-star {
+  color: rgb(241, 241, 134);
+}
+.book .bxs-star-half {
+  color: rgb(241, 241, 134);
+}
+.book button {
+  border-radius: 5px;
+  width: 80px;
+  height: 40px;
+  background-color: whitesmoke;
+  transition: 1s;
+}
+.book button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  background-color: red;
+}
+.book h3 {
+  color: #faebd7;
+}
+aside {
+  background-color: #e8c3c2;
+  height: 100px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.book button a {
+  text-decoration: none;
+  color: black;
+}
+.thongtin {
+  margin: 10px;
+}
+aside .bx-smile {
+  color: green;
+  font-size: 35px;
+}
+aside .bxs-truck {
+  color: green;
+  font-size: 35px;
+}
+aside .bx-money {
+  color: green;
+  font-size: 35px;
+}
+aside .bxs-phone-call {
+  color: green;
+  font-size: 35px;
+}
+aside p {
+  font-size: 20px;
+}
+aside strong {
+  font-size: 18px;
+}
+footer {
+  background-color: #faebd7;
+  padding: 0 0 0 100px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  width: 100%;
+  display: flex;
+}
+.footerleft {
+  width: 40%;
+}
+.footerleft strong {
+  font-size: 20px;
+  padding: 5px;
+}
+.footerleft p {
+  font-size: 20px;
+}
+.footerleft p {
+  padding: 10px;
+}
+.footermid {
+  width: 30%;
+}
+.footermid {
+  font-size: 20px;
+}
+.footerright {
+  width: 30%;
+}
+.footerright strong {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.footermid .fa-cc-visa {
+  font-size: 50px;
+  padding: 10px;
+}
+.footermid .fa-cc-mastercard {
+  font-size: 50px;
+  padding: 10px;
+}
+.footermid .fa-cc-jcb {
+  font-size: 50px;
+  padding: 10px;
+}
+.footermid .fa-cc-amazon-pay {
+  font-size: 50px;
+  padding: 10px;
+}
+.footermid .fa-cc-apple-pay {
+  font-size: 50px;
+  padding: 10px;
+}
+.footerright .fa-facebook {
+  color: blue;
+  padding: 10px;
+  font-size: 50px;
+}
+.footerright .fa-facebook-messenger {
+  color: blue;
+  padding: 10px;
+  font-size: 50px;
+}
+.footerright .fa-youtube {
+  color: red;
+  padding: 10px;
+  font-size: 50px;
+}
+.footerright .fa-comment-dots {
+  color: green;
+  padding: 10px;
+  font-size: 50px;
+}
+.footerright .bx-qr {
+  font-size: 120px;
+  padding: 10px;
+}
+.footerright img {
+  border-radius: 10px;
+  width: 170px;
+  height: 100px;
+}

@@ -1,0 +1,62 @@
+/* thuộc tính position trong CSS giúp kiểm soát vị trí các phần tử  trên trang web.
+Hiểu rõ position sẽ giúp sắp xếp bố cục và điều chỉnh giao diwjwn trang web một cách linh hoạt
+- static(mặc định): phần tử sẽ được hiển thị theo thứ tự bình thường trong html và không bị hảnh hưởng của top,left,right,botton
+
+*/
+.box{
+    position: static;
+    top:50px;/*không ảnh hưởng*/
+    left: 50px;/*không ảnh hưởng*/
+}
+/* 
+-relative(tương đối): phần tử được định vị dựa trên vị trí ban đầu của nó
+Có thể sử dụng top,botton, left, right để di chuyển phần tử mà không ảnh hưởng đến phần tử khác
+ */
+ .box1{
+    position: relative;
+    top:20px;/*Dịch chuyển 20 so với vị trí ban đầu*/
+    left: 30px;/*Dịch phải 30px*/
+    /* các vị trí khác giữ nguyên */
+}
+/*
+absolute(tuyệt đối):phần tử sẽ được định vị dựa trên phần tử cha gần nhất có position relative|absolute|fixed
+Nếu không có phần tử cha nào có position, nó sẽ được định vị theo body
+top,left,right,bottom sẽ có tác dụng
+*/
+.container{
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background-color: lightgreen;
+}
+.box2{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+/* fixed(cố định ) phần tử cố định trên màn hình, không bị ảnh hưởng khi cuộn trang
+được định vị theo viewport(toàn bộ màn hình)
+Ứng dụng tạo menu cố dịnh nút quay lại đầu trang, thanh điều hướng cố định
+*/
+.box3{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+/* sticky(dính)  hoạt động như relative, nhưng khi cuộn đến vị trí nhất định, nó trở thành fixed
+Cần có ít nhất một giá trị top, left,right, botton
+Ứng dụng thanh menu dính khi cuộn trang
+*/
+.box4{
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+}
+/* kết hợp positipn với z-index 
+ */

@@ -1,0 +1,137 @@
+/* 
+Responsive table (bảng đáp ứng) là bảng dữ liệu có thể hiển thị tốt trên mọi kích thước màn hình — đặc biệt là trên điện thoại và máy tính bảng, nơi chiều rộng màn hình bị hạn chế. Do đó, cần chuyển đổi cách hiển thị bảng khi màn hình nhỏ để dễ đọc và không bị vỡ layout.
+
+Vấn Đề Với Table Truyền Thống
+Cột 1	Cột 2	Cột 3	Cột 4
+Trên desktop, hiển thị đẹp.
+Trên mobile, bảng bị tràn ngang, không đọc được, hoặc gây vỡ giao diện.
+
+🛠 Các Cách Làm Responsive Table
+Cách 1: Cuộn ngang (scroll horizontally)
+ Code HTML + CSS:
+
+<div class="table-responsive">
+  <table>
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Trạng thái</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Áo thun nam</td>
+        <td>250.000đ</td>
+        <td>Còn hàng</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Quần jean nữ</td>
+        <td>350.000đ</td>
+        <td>Hết hàng</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Giúp bảng tràn ngang khi nhỏ hơn */
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}Trên mobile: Bảng sẽ cuộn ngang được (kéo qua trái/phải).
+
+🔹 Cách 2: Chuyển bảng thành dạng khối trên mobile
+CSS với Media Queries:
+
+@media screen and (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+}
+HTML phù hợp với CSS trên:
+
+<table>
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Sản phẩm</th>
+      <th>Giá</th>
+      <th>Trạng thái</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="STT">1</td>
+      <td data-label="Sản phẩm">Áo khoác nữ</td>
+      <td data-label="Giá">450.000đ</td>
+      <td data-label="Trạng thái">Còn hàng</td>
+    </tr>
+  </tbody>
+</table>
+Trên mobile: Mỗi hàng sẽ hiển thị như một thẻ thông tin, giúp dễ đọc hơn.
+
+Kết Luận
+Cách	Ưu điểm	Nhược điểm
+Cuộn ngang	Dễ cài đặt, phù hợp với bảng lớn	Không thân thiện UX
+Chuyển dạng khối	Dễ đọc, thân thiện mobile	Cần viết thêm CSS phức tạp
+
+ */
+ /* 
+ Thuộc tính overflow trong CSS dùng để xử lý nội dung bị tràn ra ngoài 
+ kích thước của phần tử chứa. Khi nội dung vượt quá chiều rộng (width)
+  hoặc chiều cao (height) của phần tử, bạn có thể quyết định hiển thị, ẩn hoặc tạo cuộn cho phần nội dung dư ra.
+
+Cú pháp cơ bản:
+
+selector {
+  overflow: visible | hidden | scroll | auto;
+}
+Các giá trị của overflow:
+Giá trị	Ý nghĩa
+visible	(mặc định) Nội dung vẫn hiển thị dù vượt ra ngoài phần tử.
+hidden	Nội dung bị ẩn đi nếu vượt kích thước phần tử.
+scroll	Luôn hiển thị thanh cuộn (ngay cả khi không cần).
+auto	Tự động hiển thị thanh cuộn khi nội dung bị tràn.
+Thuộc tính mở rộng:
+Thuộc tính	Ý nghĩa
+overflow-x	Áp dụng cho chiều ngang
+overflow-y	Áp dụng cho chiều dọc
+  */

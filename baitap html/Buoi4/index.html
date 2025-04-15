@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- thẻ a là thẻ liên kết -->
+    <a href="https://www.w3schools.com/tags/default.asp" target="_blank"
+      >w3school</a
+    >
+    <!-- div.inline-box -->
+    <div class="inline-box">Tôi đang là</div>
+    <style>
+      .inline-box {
+        display: inline-flex;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+    <button>click me</button>
+    <button>click me</button>
+    <div class="item">1</div>
+    <div class="item">1</div>
+    <div class="item">1</div>
+    <form action="dulieu.html" method="get">
+      <label for="name">Họ và tên:</label>
+      <input type="text" name="name" id="name" value="Ly" required />
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email" required />
+      <input
+        type="text"
+        name="phone"
+        id=""
+        pattern="[0-9]{10}"
+        title="Nhập đúng 10 số"
+      />
+      <button type="submit">Gửi</button>
+    </form>
+    <!-- Các loại input quan trọng trong HTML5
+        1- input văn bản
+        placeholder: hiển thị gợi ý trong ô nhập liệu
+         -->
+    <input type="text" name="" id="" value="Minh" placeholder="Công"/>
+    <!-- 2- input mật khẩu: 
+         required: bắt buộc nhập
+         -->
+    <input type="password" name="" id="" required />
+    <!-- 3: input email -->
+    <input type="email" name="" id="" required />
+    <!-- 4- input so: lưu ý cho nhập số nhưng giá trị vẫn là chuỗi -->
+    <input type="number" name="tuoi" id="tuoi" min="18" max="99" />
+    <!-- 5: input ngày tháng -->
+    <input type="date" name="sinhnhat" id="" />
+    <!-- 6- input thời gian: -->
+    <input type="time" name="" id="" />
+    <!-- 7- input radio (chọn 1 trong nhiều sự chọn lựa) 
+           Lưu ý: nhiều radio phải cùng name, value là giá trị mà gửi đi lên server
+           -->
+           <input type="date">
+    <input type="radio" name="gender" id="" value="nữ" checked />Nữ
+    <input type="radio" name="gender" id="" value="nam" />Nam
+    <!-- 8: input checkbox chọn nhiều thì name phải khác nhau -->
+    <input type="checkbox" name="nha" id="" value="Nhà" checked />Có nhà
+    <input type="checkbox" name="xe" id="" value="Xe" />Có Xe
+    <input type="checkbox" name="tien" id="" value="tien" />Có Tiề
+    <input type="checkbox" name="yeu" id="" value="yeu" />Có người yêu
+    <!-- 9: input file (upload tệp) khi dùng này form phải có enctype="multipart/form-data
+             -->
+    <input type="file" name="avatar" id="" />
+    <!-- 10-input color -->
+    <input type="color" name="color" id="" />
+    <!-- input tìm kiếm -->
+    <input type="search" name="search" id="" />
+    <!-- thẻ hỗ trợ -->
+    <!-- label: nhãn của input giúp cải thiện trãi nghiệm người dùng-->
+    <!-- 11- select danh sách chọn 
+                 Thuộc tính ngoài name, id còn có disabled: ko cho chọn
+                 required: bắt buộc chọn
+                 multiple: chọn nhiều giá trị cùng lúc, khi chọn nhấn ctrl
+                 sise: hiển thị giá trị cần thiết
+                 autofocus: tự động chọn vào
+                 selected: mục được chọn để hiển thị lên giao diện
+                 -->
+    <select name="chon" id="">
+      <option value="Hà nội">Hà Nội</option>
+      <option value="Hạ long" selected>Hạ Long</option>
+      <option value="Nha Trang">Nha Trang</option>
+    </select>
+    <select name="city" id="">
+      <optgroup label="Miền Nam">
+        <option value="HCM">HCM</option>
+        <option value="Long An">Long An</option>
+      </optgroup>
+      <optgroup label="Miền Bắc">
+        <option value="Hà Nội">Hà Nội</option>
+        <option value="Hạ Long">Hạ Long</option>
+      </optgroup>
+    </select>
+  
+    <!-- trong html <audio> được sử dụng để nhúng và phát trien âm thanh trên
+    trang web mp3, ogg, wav -->
+    <!-- <audio controls>
+      <source src="audio.mmp3" type="audio/mpeg" />
+      <source src="audio.ogg" type="audio/ogg" /> -->
+      <!-- controls: hiển thị các nút điều khiển như: phát dừng, âm lượng...
+         source: chỉ định các định dạng âm thanh để đảm bảo tương thích với nhiều
+         thuộc tính phổ biến:
+         controls
+         autoplay - tự động phát
+         loop-phát lặp lại
+         muted-tắt âm thanh mặc định
+         preload: kiểm soát việc tả âm thanh trước khi phát
+            none: không tải lại
+            metadata: chỉ tải thông tin
+            auto: tải toàn bộ tập âm thanh -->
+    <!-- </audio>
+    <audio controls autoplay loop muted preload="auto">
+      <source src="HTML5 Video.mp4mp4" type="audio/mpeg" />
+    </audio>
+    <!-- lưu ý: 1 số trình duyệt như chrome và safari ngăn chặn autoplay -->
+    <!-- <video width="640" height="360" controls autoplay loop muted preload="auto">
+      <source src="HTML5 Video.mp4" type="video/mp4" /> --> -->
+      <!-- poster: ảnh hiển thị trước khi phát video
+    px và %: đơn vị đo cơ định và đơn vị đo tương đối, phụ thuộc vào phần tử chứa nó
+    Nếu phần tử cha có width: 500px thì width:50% sẽ là 250px
+    Độ phân giải màn hình phổ biến 1920x1080: FULL HD: 2.07 triệu px
+    2560x1440: Quad HD: 3.69 triệu px, 3840x2160: 4KUND: 8.29 triệu px
+    7680x4320: 8kUHD: 33.18 triệu px (máy tính và TV) -->
+    </video>
+    <!--    
+  target: có các giá trị -->
+    -->
+    <!-- CSS3 có 3 cách viết:inline,internal,external
+   cú pháp: 
+   selector{
+   property:value
+   }
+   1:inline: Viết trực tiếp trong thẻ html
+   2:internal: Viết trong thẻ <style> trong head
+    -->
+  <!-- </tfoot> --> -->
+</html>

@@ -1,0 +1,105 @@
+/* CSS transform giúp thay đổi hình dạng, vị trí, kích thước hoặc xoay một phần tử mà không ảnh hưởng đến phần còn lại của trang. Đây là công cụ quan trọng để tạo hiệu ứng đẹp mắt trong thiết kế web.
+ 1. Cú Pháp Cơ Bản
+Cú pháp CSS transform:
+
+selector {
+    transform: function(value);
+}
+function: Các hàm biến đổi như rotate(), scale(), translate(), skew(), v.v.
+
+value: Giá trị của phép biến đổi, có thể là góc, kích thước, độ nghiêng, v.v.
+2. Các Loại transform
+2.1 Dịch Chuyển (translate())
+Dịch chuyển phần tử theo trục X, Y, hoặc Z.
+
+Hàm	Mô tả
+translateX(x)	Di chuyển ngang (đơn vị px, %, em, rem, v.v.)
+translateY(y)	Di chuyển dọc
+translate(x, y)	Di chuyển theo cả hai trục
+translateZ(z)	Di chuyển theo trục Z (3D)
+translate3d(x, y, z)	Di chuyển trong không gian 3D
+2.2 Xoay (rotate())
+Xoay phần tử theo trục X, Y, Z.
+
+Hàm	Mô tả
+rotate(deg)	Xoay theo chiều kim đồng hồ
+rotateX(deg)	Xoay theo trục X
+rotateY(deg)	Xoay theo trục Y
+rotateZ(deg)	Xoay theo trục Z
+rotate3d(x, y, z, deg)	Xoay theo không gian 3D
+2.3 Phóng To & Thu Nhỏ (scale())
+Thay đổi kích thước phần tử.
+
+Hàm	Mô tả
+scaleX(x)	Phóng to theo chiều ngang
+scaleY(y)	Phóng to theo chiều dọc
+scale(x, y)	Phóng to theo cả hai chiều
+scaleZ(z)	Phóng to trong không gian 3D
+2.4 Nghiêng (skew())
+Làm nghiêng phần tử theo trục X, Y.
+
+Hàm	Mô tả
+skewX(deg)	Nghiêng theo trục X
+skewY(deg)	Nghiêng theo trục Y
+skew(x, y)	Nghiêng theo cả hai trục
+2.5 Biến Đổi Nhiều Thuộc Tính
+Bạn có thể kết hợp nhiều hiệu ứng transform cùng lúc.
+
+Ví dụ Kết Hợp
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    transition: transform 0.5s;
+}
+
+.box:hover {
+    transform: translate(30px, 20px) rotate(30deg) scale(1.2);
+}
+3. Biến Đổi Trong Không Gian 3D
+CSS cũng hỗ trợ biến đổi 3D, nhưng cần dùng perspective để có chiều sâu.
+
+Ví dụ rotate3d()
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: cyan;
+    transition: transform 0.5s;
+}
+
+.box:hover {
+    transform: rotate3d(1, 1, 0, 45deg);
+}
+4. Dùng transform-origin Để Điều Chỉnh Tâm Xoay
+Mặc định, transform thực hiện thay đổi từ tâm của phần tử, nhưng có thể thay đổi với transform-origin.
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: pink;
+    transition: transform 0.5s;
+    transform-origin: top left; /* Định vị góc xoay */
+/* }
+
+.box:hover {
+    transform: rotate(45deg);
+} 
+5. Tích Hợp transform Với transition
+Kết hợp với transition để tạo hiệu ứng mượt mà.
+Ví dụ: Hiệu Ứng Nút Nhấn
+
+.button {
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border: none;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.button:active {
+    transform: scale(0.9);
+}
+*/

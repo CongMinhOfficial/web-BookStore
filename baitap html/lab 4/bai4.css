@@ -1,0 +1,23 @@
+.thumbnail {
+  position: relative; /* Tạo khung chứa thumbnail */
+}
+.thumbnail:hover > img {
+  opacity: 0.9; /* Khi rê chuột vào thumbnail, ảnh sẽ mờ đi */
+  border: 1px solid red;
+  width: 80px;
+  overlay: hidden; /* Ẩn nội dung */
+}
+.thumbnail span {
+  position: absolute;
+  background-color: bisque;
+  padding: 5px;
+  border: 1px dashed gray;
+  width: 970px;
+  text-align: justify;
+  visibility: hidden; /* Ẩn nội dung */
+}
+.thumbnail:hover span {
+  visibility: visible; /* Hiện nội dung khi rê chuột vào thumbnail */
+  top: 50%;
+  left: 10%;
+}

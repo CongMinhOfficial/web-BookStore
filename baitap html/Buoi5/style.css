@@ -1,0 +1,83 @@
+/* Display: xác định một phần tử của HTML hiển thị trên trang web
+Các thuộc tính của nó
+1- display:block
+Hiển thị dưới dạng như một khối, chiếm toàn bộ chiều rộng của dòng cha
+div,p,h1 mặc định có display là block
+2- display:inline
+Phần tử hiển thị trên cùng 1 dòng với các phần tử khác, ko thể 
+chỉnh chiều rộng hoăjc chiều cao
+<span>,<a> mặc định là inline
+3- display:inline-block
+Kết hợp đặc điểm của inline(nằm trên cùng 1 dòng) và block( có thể chỉnh theo chiều
+rộng, chiều cao
+4- display: none: ẩn hoàn toàn phần tử khỏi trang web, ko chiếm không gian
+ví dụ, người dùng tạo 1 nút chỉ hiển thị khi người dùng bấm vào nó
+ 5-display:flex, tạo bố cục linh hoạt, căn chỉnh các phần tử con dễ dàng
+6-display:grid dùng để tạo lưới hiển thị nội dung theo hàng và cột
+7-display:table biến phần tử thành bảng
+8-display:content: xóa phần tử khỏi cây DOM nhưng vẫn hiển thị nội dung con
+9-display:list-item: hiển thị phần tử như một mục danh sách, thường tạo danh sách tùy chỉnh
+*/
+ .box{
+    display: block;
+    width: 200px;
+    background: lightblue;
+    padding: 10px;
+ }
+ .inline-box{
+    display: inline;
+    background: yellow;
+    padding: 5px;
+ }
+ .btn{
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    background: orange;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+ }
+ .hidden-none{
+    display: none;
+ }
+ .flex-content{
+    display: flex;
+ }
+ .item{
+    width: 50px;
+    height: 50px;
+    background: lightgreen;
+    text-align: center;
+    line-height: 50px;
+ }
+ .grid-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px
+ }
+ .grid-item{
+    background: lightcoral;
+    padding: 20px;
+    text-align: center;
+ }
+ .table{
+    display: table;
+    width: 100%;
+ }
+ .row{
+    display: table-row;
+ }
+ .cell{
+    display: table-cell;
+    border: 1px solid black;
+    padding: 10px;
+ }
+ .content-box{
+    display: contents;
+ }
+ .list-item{
+    display: list-item;
+    list-style: disc;
+    margin-left: 20px;
+ }

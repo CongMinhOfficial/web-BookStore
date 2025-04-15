@@ -1,0 +1,85 @@
+/* 
+border: tạo viền
+border:width style color;
+ */
+ .box
+ {
+    /* border:2px solid red;
+    border-width: 10px;
+    border-style: solid double dotted dashed;
+    border-color: red green blue yellow; */
+    border-top: 3px solid red;
+    border-right: 5px dashed green;
+    border-bottom: 2px dotted yellow;
+    border-left: 4px double peru;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 10px; */
+    /* border-radius: 20px; */
+    /* viết gộp cho 4 thuộc tính trên */
+    border-radius: 10px 30px 30px 10px;
+    /* bo theo hình elip 50px tính theo chiều ngang, 20px tính theo chiều dọc*/
+    border-radius: 50px/20px;
+ }
+ /* Các thuộc tính con của border
+ border-width(độ dày của viền
+ border-width: thin|medium|thick| chiều rộng tụ thể tính bằng px
+ border-style(kiểu viền)
+ solid: viền liền
+ dashed: viền nét đứt
+ dotted: viền chấm
+ double: viền đôi
+ groove: viền khía vào trong
+ ridge: viền khía ra ngoài
+ inset: viền chìm vào
+ outset: viền nổi ra ngoài
+ có thể kết hợp cùng lúc các đường viền
+  border-style: solid double dotted dashed;
+  border-color(màu viền)
+  Các thuộc tính border từng cạnh
+  border-top: width style color
+  border-right:width style color
+  border-bottom: width style color
+  border-left:width style color
+  - border-radius(bo góc viền)
+  border-radius:10px
+  bo tròn riêng biệt
+  border-top-left-radius:giá trị
+  border-top-right-radius:giá trị
+  border-bottom-right-radius:giá trị
+  border-bottom-left-radius:giá trị
+  */
+  /* tạo khung tròn */
+  .circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+  /* kế hợp hiệu ứng với border kết hợp với box-shadow để tạo hiệu ứng đẹp 
+  box-shadow: offset x offset y blur-radius spread-radius color
+  offset x: độ dịch chuển của bóng theo trục X
+  offset y: độ dịch chuyển của bóng theo trục Y
+  blur-radius(tùy chọn): độ mờ của bóng(giá trị càng lớn thì bóng càng mờ
+  spread-radius(tùy chọn): độ lan rộng của bóng (giá trị dương làm bóng to hơn, giá trị âm thì làm bóng thu nhỏ)
+  color(tùy chọn) màu của bóng
+  inset (tùy chọn) nếu có inset bóng sẽ nằm bên trong phần tử thay vì bên ngoài, mặc định bóng là outset
+
+  */
+  .box1{
+    width: 200px;
+    height: 100px;
+    border: 5px solid salmon;
+    /* box-shadow: 20px 30px 5px -10px rgba(0,0,0, 0.8); */
+    /* bóng nằm bên trong */
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.5);
+    /* tạo bóng nhiều lớp */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(255, 0, 0, 0.5);
+  }
+/* Box hiển thị dạng box model trên trang web. Mỗi phần tử được định dạng bằng các
+thuộc tính điều chỉnh kích thước, viền, khoảng cách, đổ bóng và các hiệu ứng khác
+Thuộc tính kích thước: width, height
+max-width và max-height(chiều rộng và chiều cao tối đa)
+min-width và min-height
+ */

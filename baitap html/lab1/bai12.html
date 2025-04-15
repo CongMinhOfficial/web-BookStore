@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="color: green; text-align: center">
+      Phiếu đăng ký tham gia chương trình khuyến mãi
+    </h1>
+    <form action="bai12.php" method="post" autocomplete="on">
+      <table
+        border="1"
+        width="60%"
+        bordercolor="black"
+        cellpadding="7"
+        cellspacing="0"
+        align="center"
+      >
+        <tr style="color: green">
+          <td><label for="name">Họ và tên</label></td>
+          <td>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Nhập Họ và tên"
+            />
+          </td>
+        </tr>
+        <tr style="color: green">
+          <td><label for="dia chi">Địa chỉ</label></td>
+          <td>
+            <input
+              type="text"
+              name="name"
+              id=""
+              required
+              placeholder="Nhập địa chỉ"
+            />
+          </td>
+        </tr>
+        <tr style="color: green">
+          <td><label for="do dien thoai">SDT</label></td>
+          <td>
+            <input
+              type="number"
+              name=""
+              id=""
+              pattern="[0-9]{10}"
+              title="Nhập đúng 10 số"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td style="color: green"><label for="Phai"> SEX</label></td>
+          <td>
+            <input type="radio" name="SEX" id="" value="nam" />Nam
+            <input type="radio" name="SEX" id="" value="nu" checked /> Nữ
+          </td>
+        </tr>
+        <tr>
+          <td style="color: green">
+            <label for="nghe nghiep"> Nghề Nghiệp</label>
+          </td>
+          <td>
+            <select name="nghe nghiep" id="">
+              Giáo Viên
+              <option value="nghe nghiep">Giáo viên</option>
+              <option value="nghe nghiep">Kỹ Sư</option>
+              <option value="nghe nghiep">Bác Sĩ</option>
+              <option value="nghe nghiep">Khác</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: green">Chọn sản phẩm tham gia</td>
+          <td>
+            <select name="sản phẩm" id="" size="4" multiple>
+              <option value="Kem danh rang">Kem đánh răng</option>
+              <option value="Bột giặt">Bột giặt</option>
+              <option value="Dau goi dau">Dầu gội đầu</option>
+              <option value="sua tam">Sửa tắm</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: green">
+            <label for=""> Số người dự đoán tham gia</label>
+          </td>
+          <td><input type="number" name="" id="" min="0" max="99999" /></td>
+        </tr>
+        <tr style="text-align: center">
+          <td colspan="2">
+            <input
+              type="submit"
+              style="background-color: rgb(193, 186, 186)"
+              name="dong y"
+              id=""
+              value="Đồng Ý"
+              size="3"
+            />
+          </td>
+        </tr>
+        <tr style="text-align: center; color: red">
+          <td colspan="2"></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

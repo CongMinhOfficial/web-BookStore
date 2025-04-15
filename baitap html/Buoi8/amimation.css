@@ -1,0 +1,84 @@
+/* 
+CSS Animation cho phép tạo ra các hiệu ứng chuyển động cho phần tử mà không cần dùng JavaScript hay thư viện bên ngoài.
+ 2. Cấu trúc cơ bản của animation
+Để tạo hiệu ứng animation, ta cần hai phần chính:
+1 Định nghĩa animation với @keyframes
+2️ Áp dụng animation bằng thuộc tính animation
+
+ Cú pháp đầy đủ:
+@keyframes ten-animation {
+    from { thuộc tính ban đầu }
+    to { thuộc tính kết thúc }
+}
+
+.selector {
+    animation: ten-animation thời-gian kiểu-lặp độ-trễ chế-độ-hoàn-thành kiểu-đếm;
+}
+ Hoặc dùng nhiều trạng thái:
+
+@keyframes ten-animation {
+    0% { thuộc tính ban đầu }
+    50% { thuộc tính trung gian }
+    100% { thuộc tính kết thúc }
+}
+Các thuộc tính trong animation
+1- animation-name
+Xác định tên của animation (trùng với tên trong @keyframes).
+
+animation-name: slide;
+2- animation-duration
+Xác định thời gian chạy animation (đơn vị: s hoặc ms).
+
+animation-duration: 2s;
+3- animation-timing-function
+Kiểm soát tốc độ của animation.
+
+Giá trị	Ý nghĩa
+linear	Tốc độ đều
+ease	Chậm đầu, nhanh giữa, chậm cuối (mặc định)
+ease-in	Chậm dần khi bắt đầu
+ease-out	Chậm dần khi kết thúc
+ease-in-out	Chậm đầu và cuối
+Ví dụ:
+
+animation-timing-function: ease-in-out;
+4- animation-delay
+Xác định thời gian chờ trước khi animation bắt đầu.
+
+animation-delay: 1s;
+5-  animation-iteration-count
+Xác định số lần lặp animation.
+
+Giá trị	Ý nghĩa
+1	Chạy 1 lần (mặc định)
+infinite	Chạy mãi mãi
+3	Chạy 3 lần
+animation-iteration-count: infinite;
+6- animation-direction
+Xác định hướng chạy animation.
+
+Giá trị	Ý nghĩa
+normal	Chạy từ đầu đến cuối (mặc định)
+reverse	Chạy ngược lại từ cuối về đầu
+alternate	Chạy từ đầu đến cuối rồi ngược lại
+alternate-reverse	Chạy từ cuối về đầu rồi ngược lại
+animation-direction: alternate;
+7- animation-fill-mode
+Xác định trạng thái của phần tử trước/sau khi animation kết thúc.
+
+Giá trị	Ý nghĩa
+none	Trở về trạng thái ban đầu sau khi animation kết thúc (mặc định)
+forwards	Giữ trạng thái cuối cùng sau khi animation kết thúc
+backwards	Giữ trạng thái ban đầu trong lúc chờ delay
+both	Kết hợp cả forwards và backwards
+
+animation-fill-mode: forwards;
+8- animation-play-state
+Xác định trạng thái chạy hoặc dừng animation.
+
+Giá trị	Ý nghĩa
+running	Animation chạy (mặc định)
+paused	Dừng animation
+
+animation-play-state: paused;
+ */

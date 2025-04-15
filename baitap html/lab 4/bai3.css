@@ -1,0 +1,74 @@
+.anh {
+  background: url(./../lab1/img/img/nen.png) no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  max-width: 100%;
+}
+.menu {
+  background-color: black;
+  height: 100%;
+  padding: 10px;
+  text-align: center;
+}
+.bu {
+  display: flex;
+}
+h3 {
+  color: white;
+  background-color: red;
+  border-radius: 10px;
+  text-align: center;
+  margin: -4px;
+}
+.nut {
+  background-color: purple;
+  padding: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.nut:hover {
+  background-color: blue;
+}
+.login {
+  border: 4px solid #ccc;
+  padding: 1px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.o {
+  padding: 20px;
+  border: 4px solid #ccc;
+  padding: 1px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.xanh {
+  color: blue;
+}
+.I {
+  border: 4px solid red;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.sao {
+  color: yellow;
+  font-size: large;
+}
+.P {
+  text-align: right;
+}
+.U {
+  border: 4px solid red;
+  padding: 10px;
+  border-radius: 5px;
+}
+.ba {
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}

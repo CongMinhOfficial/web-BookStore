@@ -1,0 +1,51 @@
+/* 
+Các thuộc tính quan trọng trong Grid Layout
+Thuộc tính	Ý nghĩa
+display: grid;	Biến phần tử thành một Grid Container.
+grid-template-columns	Xác định số cột và kích thước của mỗi cột.
+grid-template-rows	Xác định số hàng và kích thước của mỗi hàng.
+grid-column-gap / column-gap	Khoảng cách giữa các cột.
+grid-row-gap / row-gap	Khoảng cách giữa các hàng.
+gap	Viết tắt của row-gap và column-gap.
+grid-template-areas	Định nghĩa bố cục bằng tên vùng (area).
+grid-auto-flow	Điều chỉnh cách các phần tử được sắp xếp (row hoặc column).
+grid-auto-rows	Xác định kích thước tự động của hàng.
+grid-auto-columns	Xác định kích thước tự động của cột.
+align-items	Căn chỉnh các phần tử theo chiều dọc.
+justify-items	Căn chỉnh các phần tử theo chiều ngang.
+align-content	Căn chỉnh toàn bộ Grid theo chiều dọc.
+justify-content	Căn chỉnh toàn bộ Grid theo chiều ngang.
+ Thuộc tính áp dụng cho Grid Item
+
+Thuộc tính	Ý nghĩa
+grid-column-start	Xác định cột bắt đầu của một item.
+grid-column-end	Xác định cột kết thúc của một item.
+grid-column	Viết tắt của grid-column-start / grid-column-end.
+grid-row-start	Xác định hàng bắt đầu của một item.
+grid-row-end	Xác định hàng kết thúc của một item.
+grid-row	Viết tắt của grid-row-start / grid-row-end.
+grid-area	Xác định vị trí của một item bằng tên trong grid-template-areas.
+
+ */
+ /* 
+ Các thuộc tính quan trọng trong Flexbox
+🔹 Thuộc tính cho Flex Container
+
+Thuộc tính	Ý nghĩa
+display: flex;	Biến phần tử thành Flex Container.
+flex-direction	Xác định hướng sắp xếp (row, row-reverse, column, column-reverse).
+flex-wrap	Quyết định có cho phép các phần tử xuống hàng không (nowrap, wrap, wrap-reverse).
+flex-flow	Viết tắt của flex-direction và flex-wrap.
+justify-content	Căn chỉnh các phần tử theo chiều ngang.
+align-items	Căn chỉnh các phần tử theo chiều dọc.
+align-content	Căn chỉnh toàn bộ flexbox theo chiều dọc.
+🔹 Thuộc tính cho Flex Items
+
+Thuộc tính	Ý nghĩa
+order	Xác định thứ tự hiển thị của phần tử.
+flex-grow	Xác định phần tử có mở rộng không nếu có không gian trống.
+flex-shrink	Xác định phần tử có co lại không khi không đủ không gian.
+flex-basis	Xác định kích thước ban đầu của phần tử.
+flex	Viết tắt của flex-grow, flex-shrink, flex-basis.
+align-self	Căn chỉnh một phần tử riêng biệt trong flexbox.
+  */

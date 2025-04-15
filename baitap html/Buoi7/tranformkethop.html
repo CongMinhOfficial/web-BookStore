@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            transition: transform 0.5s;
+        }
+
+        .box:hover {
+            transform: translate(30px, 20px) rotate(30deg) scale(1.2);
+        } */
+        /* biến đổi trong không gian 3d */
+        /* .box {
+            width: 100px;
+            height: 100px;
+            background: cyan;
+            transition: transform 0.5s;
+        }
+
+        .box:hover {
+            transform: rotate3d(1, 1, 0, 45deg);
+        } */
+        .box {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            transition: transform 0.5s;
+            transform-origin: top left;
+            /* Định vị góc xoay */
+        }
+
+        .box:hover {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>
