@@ -21,7 +21,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 100;
+  z-index: 1;
 }
 header::before {
   content: "";
@@ -146,6 +146,7 @@ main {
   background: url(/giuaky/img/dangnhap.png);
 }
 .right {
+  width: auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
@@ -162,11 +163,17 @@ main {
   .right {
     grid-template-columns: repeat(2, 1fr);
   }
+  aside {
+    flex-direction: column;
+  }
+  footer {
+    flex-direction: column;
+  }
 }
-
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .right {
     grid-template-columns: repeat(3, 1fr);
+    width: auto;
   }
 }
 
@@ -251,8 +258,9 @@ img {
   color: #faebd7;
 }
 aside {
+  width: 100%;
   background-color: #e8c3c2;
-  height: 100px;
+  height: auto;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -287,12 +295,11 @@ aside strong {
   font-size: 18px;
 }
 footer {
+  width: 100%;
   background-color: #faebd7;
   padding: 0 0 0 100px;
   padding-top: 40px;
   padding-bottom: 30px;
-  width: 100%;
-  display: flex;
 }
 .footerleft {
   width: 40%;

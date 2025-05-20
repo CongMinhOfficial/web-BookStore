@@ -1,0 +1,880 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.body {
+  background: url(img/chude.png) no-repeat;
+  height: 800px;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 150px;
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  top: 0;
+  background-color: rgba(149, 255, 170, 0.1);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+.logo {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+  margin-top: -50px;
+}
+
+.logoright {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+  margin-top: -35px;
+  margin-left: auto;
+  order: 2;
+  z-index: 10;
+  display: inline-block;
+  position: relative;
+}
+
+.logoright::after {
+  content: attr(data-badge);
+  display: none;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.logoright[data-badge]:not([data-badge=""])::after {
+  display: inline-block;
+}
+
+.navbar {
+  margin-top: 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+#check {
+  display: none;
+}
+
+.icon {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .icon {
+    display: block;
+  }
+  #check:checked ~ .icon #menu-icon {
+    display: none;
+  }
+  #check:checked ~ .icon #close-icon {
+    display: block;
+  }
+  .icon #close-icon {
+    display: none;
+  }
+  .navbar {
+    text-align: center;
+    position: absolute;
+    top: 65%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(149, 255, 170, 0.1);
+    backdrop-filter: blur(50px);
+    transition: 1s;
+    overflow: hidden;
+    display: flex;
+  }
+  #check:checked ~ .navbar {
+    height: 150px;
+  }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.bb {
+  justify-content: center;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+.bb a {
+  margin-top: 40px;
+}
+
+.bb span {
+  width: 250px;
+  position: absolute;
+  margin-top: 70px;
+  visibility: hidden;
+  text-align: justify;
+}
+
+.bb:hover span {
+  text-align: center;
+  visibility: visible;
+}
+
+main {
+  margin-top: 0;
+  background-color: #31393e;
+  display: flex;
+  width: 100%;
+}
+
+.left {
+  padding: 10px;
+  width: 20%;
+  font-size: 10px;
+}
+
+.left ul li {
+  color: whitesmoke;
+  margin: 10px;
+  list-style: none;
+}
+
+.right {
+  width: 80%;
+  display: grid;
+}
+
+.right1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.book {
+  transition: 1s;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  width: 220px;
+}
+
+.book:hover {
+  transform: scale(1.2);
+  border-radius: 10px;
+  background-color: yellow;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.buy-button {
+  border: none;
+  border-radius: 5px;
+  width: 80px;
+  height: 40px;
+  line-height: 20px;
+  background-color: brown;
+  color: greenyellow;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buy-button:hover {
+  transform: scale(1.2);
+  background-color: red;
+}
+
+.details-button {
+  display: inline-block;
+  border-radius: 5px;
+  width: 80px;
+  height: 40px;
+  line-height: 20px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.details-button:hover {
+  transform: scale(1.2);
+  background-color: #50c878;
+}
+
+.book .bxs-star,
+.book .bxs-star-half {
+  color: rgb(241, 241, 134);
+}
+
+.break-before::before {
+  content: "";
+  flex-basis: 100%;
+  height: 0;
+}
+
+.book h3 {
+  color: #faebd7;
+  font-size: 16px;
+}
+
+.book p {
+  font-size: 12px;
+  color: #faebd7;
+}
+
+.img {
+  width: 180px;
+  height: 250px;
+  object-fit: cover;
+}
+
+h2 {
+  color: #fdf5e6;
+  font-size: 20px;
+  height: 30px;
+  margin-top: 12px;
+  border-radius: 10px;
+}
+
+aside {
+  height: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.thongtin {
+  margin: 10px;
+}
+
+aside .bx-smile,
+aside .bxs-truck,
+aside .bx-money,
+aside .bxs-phone-call {
+  color: green;
+  font-size: 35px;
+}
+
+aside p {
+  font-size: 20px;
+}
+
+aside strong {
+  font-size: 18px;
+}
+
+footer {
+  background-color: #faebd7;
+  padding: 40px 100px 30px;
+  width: 100%;
+  display: flex;
+}
+
+.footerleft {
+  width: 30%;
+}
+
+.footerleft strong,
+.footerright strong {
+  font-size: 20px;
+}
+
+.footerleft p {
+  font-size: 20px;
+}
+
+.footermid {
+  width: 30%;
+  font-size: 20px;
+}
+
+.footerright {
+  width: 30%;
+}
+
+.footermid .fa-cc-visa,
+.footermid .fa-cc-mastercard,
+.footermid .fa-cc-jcb,
+.footermid .fa-cc-amazon-pay,
+.footermid .fa-cc-apple-pay {
+  font-size: 50px;
+}
+
+.footerright .fa-facebook,
+.footerright .fa-facebook-messenger {
+  color: blue;
+  font-size: 50px;
+}
+
+.footerright .fa-youtube {
+  color: red;
+  font-size: 50px;
+}
+
+.footerright .fa-comment-dots {
+  color: green;
+  font-size: 50px;
+}
+
+.footerright .bx-qr {
+  font-size: 70px;
+}
+
+.footerright img {
+  width: 180px;
+  height: 100px;
+}
+
+.product-container {
+  margin-top: 120px;
+  padding: 20px;
+  background-color: #31393e;
+  min-height: 100vh;
+}
+
+.purchase-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.confirm-button {
+  margin: 20px 10px;
+  border: none;
+  border-radius: 5px;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #50c878;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.confirm-button:hover {
+  transform: scale(1.1);
+  background-color: #4a90e2;
+}
+
+.back-button {
+  margin: 20px 10px;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ff9800;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+  background-color: #e68900;
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fdf5e6;
+  color: #31393e;
+  font-size: 12px;
+}
+
+.continue-button {
+  margin: 20px 10px;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #2196f3;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.continue-button:hover {
+  transform: scale(1.1);
+  background-color: #1976d2;
+}
+
+.h5 {
+  margin-top: 50px;
+}
+
+/* Media Query cho Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  header {
+    height: 120px;
+    padding: 0 3%;
+  }
+
+  .logo {
+    font-size: 24px;
+    margin-top: -40px;
+  }
+
+  .logoright {
+    font-size: 24px;
+    margin-top: -30px;
+    margin-left: auto;
+  }
+
+  .navbar a {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+
+  .icon {
+    font-size: 32px;
+  }
+
+  main {
+    flex-direction: row;
+  }
+
+  .left {
+    width: 30%;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .right {
+    width: 70%;
+  }
+
+  .book {
+    width: 200px;
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .img {
+    width: 160px;
+    height: 220px;
+  }
+
+  .book h3 {
+    font-size: 14px;
+  }
+
+  .book p {
+    font-size: 11px;
+  }
+
+  .buy-button,
+  .details-button {
+    width: 70px;
+    height: 35px;
+    font-size: 11px;
+  }
+
+  aside {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .thongtin {
+    width: 45%;
+    margin: 8px;
+  }
+
+  aside p {
+    font-size: 16px;
+  }
+
+  aside strong {
+    font-size: 14px;
+  }
+
+  footer {
+    padding: 30px 50px;
+    flex-wrap: wrap;
+  }
+
+  .footerleft,
+  .footermid,
+  .footerright {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footerleft p,
+  .footermid,
+  .footerright strong {
+    font-size: 16px;
+  }
+
+  .footerright img {
+    width: 150px;
+    height: 80px;
+  }
+
+  .product-container {
+    margin-top: 100px;
+    padding: 15px;
+  }
+
+  .confirm-button,
+  .back-button,
+  .continue-button {
+    width: 130px;
+    height: 28px;
+    font-size: 13px;
+  }
+}
+
+/* Media Query cho Mobile (dưới 768px) */
+@media (max-width: 768px) {
+  header {
+    height: 100px;
+    padding: 0 2%;
+  }
+
+  .logo {
+    font-size: 20px;
+    margin-top: -30px;
+  }
+
+  .logoright {
+    font-size: 20px;
+    margin-top: -25px;
+    margin-right: 10px;
+  }
+
+  .navbar {
+    top: 100%;
+  }
+
+  #check:checked ~ .navbar {
+    height: 200px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .icon {
+    font-size: 28px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .bb {
+    height: 80px;
+  }
+
+  .bb a {
+    margin-top: 20px;
+  }
+
+  .bb span {
+    width: 200px;
+    margin-top: 50px;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .book {
+    width: 180px;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .img {
+    width: 140px;
+    height: 200px;
+  }
+
+  .book h3 {
+    font-size: 13px;
+  }
+
+  .book p {
+    font-size: 10px;
+  }
+
+  .buy-button,
+  .details-button {
+    width: 60px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  aside {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .thongtin {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  aside .bx-smile,
+  aside .bxs-truck,
+  aside .bx-money,
+  aside .bxs-phone-call {
+    font-size: 30px;
+  }
+
+  aside p {
+    font-size: 14px;
+  }
+
+  aside strong {
+    font-size: 12px;
+  }
+
+  footer {
+    padding: 20px 20px;
+    flex-direction: column;
+  }
+
+  .footerleft,
+  .footermid,
+  .footerright {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .footerleft p,
+  .footermid,
+  .footerright strong {
+    font-size: 14px;
+  }
+
+  .footermid .fa-cc-visa,
+  .footermid .fa-cc-mastercard,
+  .footermid .fa-cc-jcb,
+  .footermid .fa-cc-amazon-pay,
+  .footermid .fa-cc-apple-pay {
+    font-size: 40px;
+  }
+
+  .footerright .fa-facebook,
+  .footerright .fa-facebook-messenger,
+  .footerright .fa-youtube,
+  .footerright .fa-comment-dots {
+    font-size: 40px;
+  }
+
+  .footerright .bx-qr {
+    font-size: 60px;
+  }
+
+  .footerright img {
+    width: 120px;
+    height: 60px;
+  }
+
+  .product-container {
+    margin-top: 80px;
+    padding: 10px;
+  }
+
+  .purchase-details {
+    gap: 15px;
+  }
+
+  .confirm-button,
+  .back-button,
+  .continue-button {
+    width: 120px;
+    height: 26px;
+    font-size: 12px;
+  }
+
+  .quantity-input {
+    width: 50px;
+    font-size: 11px;
+  }
+}
+
+/* Media Query cho Mobile nhỏ (dưới 480px) */
+@media (max-width: 480px) {
+  header {
+    height: 80px;
+  }
+
+  .logo {
+    font-size: 18px;
+    margin-top: -20px;
+  }
+
+  .logoright {
+    font-size: 18px;
+    margin-top: -20px;
+    margin-right: 5px;
+  }
+
+  .logoright::after {
+    font-size: 10px;
+    padding: 1px 4px;
+    top: -8px;
+    right: -8px;
+  }
+
+  .navbar a {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+
+  .icon {
+    font-size: 24px;
+  }
+
+  .bb {
+    height: 60px;
+  }
+
+  .bb a {
+    margin-top: 15px;
+  }
+
+  .bb span {
+    width: 150px;
+    margin-top: 40px;
+    font-size: 12px;
+  }
+
+  .left {
+    font-size: 12px;
+  }
+
+  .book {
+    width: 160px;
+    margin: 8px;
+    padding: 8px;
+  }
+
+  .img {
+    width: 120px;
+    height: 180px;
+  }
+
+  .book h3 {
+    font-size: 12px;
+  }
+
+  .book p {
+    font-size: 9px;
+  }
+
+  .buy-button,
+  .details-button {
+    width: 55px;
+    height: 28px;
+    font-size: 9px;
+  }
+
+  h2 {
+    font-size: 16px;
+    height: 25px;
+  }
+
+  .product-container {
+    margin-top: 60px;
+    padding: 8px;
+  }
+
+  .confirm-button,
+  .back-button,
+  .continue-button {
+    width: 100px;
+    height: 24px;
+    font-size: 11px;
+  }
+
+  .quantity-input {
+    width: 45px;
+    font-size: 10px;
+  }
+}

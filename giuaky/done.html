@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="bansach.css" />
+    <title>Xác nhận mua hàng</title>
+  </head>
+  <body>
+    <div class="body">
+      <header class="header">
+        <a href="bansach.html" class="logo"><i class="fa fa-school"></i></a>
+      </header>
+    </div>
+    <main>
+      <div class="product-container">
+        <h2>Xác nhận mua hàng</h2>
+        <div id="purchase-details" class="purchase-details"></div>
+        <div class="button-group">
+          <button class="back-button">Quay lại chọn thêm</button>
+          <button class="confirm-button">Xác nhận mua</button>
+        </div>
+      </div>
+    </main>
+    <script>
+      // Hàm hiển thị và cập nhật giỏ hàng
+      function hienThiGioHang() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const container = document.getElementById("purchase-details");
+
+        console.log("Giỏ hàng:", cart); // Debug
+
+        if (cart.length > 0) {
+          container.innerHTML = cart
+            .map(
+              (item, index) => `
+              <div class="book">
+                <img src="${item.sanPham.hinhAnh}" alt="${item.sanPham.moTaHinhAnh}" class="img" />
+                <h3>${item.sanPham.ten}</h3>
+                <p><strong>Tác giả:</strong> ${item.sanPham.tacGia}</p>
+                <p><strong>Giá:</strong> ${item.sanPham.gia}</p>
+                <p><strong>Đánh giá:</strong> ${item.sanPham.danhGia}/5</p>
+                <p>
+                  <strong>Số lượng:</strong>
+                  <input
+                    type="number"
+                    class="quantity-input"
+                    min="1"
+                    value="${item.soLuong}"
+                    data-index="${index}"
+                    aria-label="Số lượng sách ${item.sanPham.ten}"
+                  />
+                </p>
+              </div>
+            `
+            )
+            .join("");
+
+          // Cập nhật số lượng khi thay đổi
+          document.querySelectorAll(".quantity-input").forEach((input) => {
+            input.addEventListener("input", (e) => {
+              const index = e.target.dataset.index;
+              let soLuong = parseInt(e.target.value) || 1;
+              if (soLuong < 1) {
+                soLuong = 1;
+                e.target.value = 1;
+              }
+              cart[index].soLuong = soLuong;
+              localStorage.setItem("cart", JSON.stringify(cart));
+              console.log("Cập nhật giỏ hàng:", cart); // Debug
+            });
+          });
+        } else {
+          container.innerHTML = `<p>Giỏ hàng trống! Vui lòng chọn sản phẩm từ <a href="bansach.html">trang sách</a>.</p>`;
+        }
+      }
+
+      // Hàm xử lý xác nhận mua
+      function xacNhanMua() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        if (cart.length > 0) {
+          const thongTinMua = cart
+            .map((item) => `${item.soLuong} cuốn "${item.sanPham.ten}"`)
+            .join(", ");
+          alert(`Đã xác nhận mua: ${thongTinMua}! Cảm ơn bạn đã mua hàng.`);
+
+          // Lưu đơn hàng vào localStorage
+          localStorage.setItem("orderedItems", JSON.stringify(cart));
+
+          // Xóa giỏ hàng
+          localStorage.removeItem("cart");
+
+          // Chuyển hướng sang order.html
+          window.location.href = "xong.html";
+        } else {
+          alert("Giỏ hàng trống! Vui lòng chọn ít nhất một sản phẩm.");
+        }
+      }
+
+      // Hàm quay lại chọn thêm
+      function quayLaiChonThem() {
+        window.location.href = "bansach.html";
+      }
+
+      // Gắn sự kiện cho các nút
+      document
+        .querySelector(".confirm-button")
+        .addEventListener("click", xacNhanMua);
+      document
+        .querySelector(".back-button")
+        .addEventListener("click", quayLaiChonThem);
+
+      // Chạy hàm hiển thị khi trang được tải
+      document.addEventListener("DOMContentLoaded", hienThiGioHang);
+    </script>
+  </body>
+</html>

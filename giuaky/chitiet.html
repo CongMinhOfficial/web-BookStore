@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../bansach.css" />
+    <title>Chi tiết sản phẩm</title>
+  </head>
+  <body>
+    <div class="body">
+      <header class="header">
+        <a href="./bansach.html" class="logo"
+          ><i class="fa fa-school"></i> Sách</a
+        >
+      </header>
+    </div>
+    <main>
+      <div class="product-container">
+        <h2>Chi tiết sản phẩm</h2>
+        <div id="detail-content" class="purchase-details"></div>
+        <div class="button-group">
+          <button class="buy-button">Thêm vào giỏ hàng</button>
+          <button class="back-detail-button">Quay lại</button>
+        </div>
+      </div>
+    </main>
+    <script src="../books.js"></script>
+    <script>
+      // Hàm hiển thị chi tiết sản phẩm
+      function hienThiChiTiet() {
+        const url = window.location.pathname;
+        const fileName = url.substring(url.lastIndexOf("/") + 1);
+        const sanPham = danhSachSanPham.find(
+          (sp) => sp.lienKetChiTiet === `thetu/${fileName}`
+        );
+        const container = document.getElementById("detail-content");
+
+        console.log("Sản phẩm chi tiết:", sanPham); // Debug
+
+        if (sanPham) {
+          container.innerHTML = `
+            <div class="book">
+              <img src="../${sanPham.hinhAnh}" alt="${
+            sanPham.moTaHinhAnh
+          }" class="img" />
+              <h3>${sanPham.ten}</h3>
+              <p><strong>Tác giả:</strong> ${sanPham.tacGia}</p>
+              <p><strong>Lượt bán:</strong> ${sanPham.luotBan}</p>
+              <p><strong>Giá:</strong> ${sanPham.gia}</p>
+              <p><strong>Đánh giá:</strong> ${taoSao(sanPham.danhGia)} ${
+            sanPham.danhGia
+          }/5</p>
+              <p><strong>Mô tả:</strong> ${sanPham.moTaHinhAnh}</p>
+            </div>
+          `;
+
+          // Gắn sự kiện cho nút "Thêm vào giỏ hàng"
+          document
+            .querySelector(".buy-button")
+            .addEventListener("click", () => {
+              const index = danhSachSanPham.indexOf(sanPham);
+              muaSanPham(index);
+            });
+        } else {
+          container.innerHTML = `<p>Không tìm thấy sản phẩm. <a href="../bansach.html">Quay lại danh sách</a>.</p>`;
+        }
+      }
+
+      // Hàm quay lại bansach.html
+      function quayLai() {
+        window.location.href = "../bansach.html";
+      }
+
+      // Gắn sự kiện cho nút "Quay lại"
+      document
+        .querySelector(".back-detail-button")
+        .addEventListener("click", quayLai);
+
+      // Chạy hàm hiển thị khi trang được tải
+      document.addEventListener("DOMContentLoaded", hienThiChiTiet);
+    </script>
+  </body>
+</html>
